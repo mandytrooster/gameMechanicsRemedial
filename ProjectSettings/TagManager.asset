@@ -16,6 +16,7 @@ TagManager:
   - ledge2
   - enemyJump
   - playerJump
+  - ledges
   layers:
   - Default
   - TransparentFX

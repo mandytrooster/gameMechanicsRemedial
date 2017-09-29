@@ -16,7 +16,8 @@ public class EnemySpawner : MonoBehaviour {
     public float timer = 3.0f;
 
     public int  levelMax = 3;
-    public int enemiesKilled;
+    public bool enemyKilled;
+    float increaseSpawnRate;
 
     void Start()
     {
@@ -27,14 +28,18 @@ public class EnemySpawner : MonoBehaviour {
     {
         timer -= Time.deltaTime;
 
-            if (levelMax >= enemiesSpawned && timer <= 0)
+
+        if (enemyKilled == true)
+        {
+
+            if (timer <= 0)
             {
-                nextSpawn = Time.time + spawnRate;
+                //nextSpawn = Time.time + spawnRate;
                 spawnPoint = new Vector3(enemySpawnx, transform.position.y, 0);
                 Instantiate(enemy, spawnPoint, Quaternion.identity);
                 enemiesSpawned++;
-                enemiesKilled++;
                 timer = 10.0f;
             }
         }
+    }
 }

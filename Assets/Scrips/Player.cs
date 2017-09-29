@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
     private int speed = 5;
     private bool facingright = false;
     private float movementX;
-    private int jumpPower = 2000;
+    private int jumpPower = 1000;
     private int doubleJumpPower = 500;
     private Rigidbody2D rb;
 
@@ -25,16 +25,17 @@ public class Player : MonoBehaviour {
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>(); 
-
     }
 
     void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, ground);
+       
     }
 
     void Update()
     {
+
         if(pushBackCount <= 0)
         {
             Walk();
@@ -86,7 +87,15 @@ public class Player : MonoBehaviour {
         //walking
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(movementX * speed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "ledges")
+        {
+            rb.gravityScale = 10.0F;
+            jumpPower = 1500;
+            doubleJumpPower = 1000;
+        }
+    }
     void Flip()
     {
         facingright = !facingright;
@@ -94,5 +103,4 @@ public class Player : MonoBehaviour {
         scale.x *= -1;
         transform.localScale = scale;
     }
-
 }

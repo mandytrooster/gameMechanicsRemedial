@@ -81,7 +81,6 @@
     <Compile Include="Assets\Scrips\Bridge.cs" />
     <Compile Include="Assets\Scrips\ButtonPressed.cs" />
     <Compile Include="Assets\Scrips\CameraScript.cs" />
-    <Compile Include="Assets\Scrips\CheckGrounded.cs" />
     <Compile Include="Assets\Scrips\Enemy.cs" />
     <Compile Include="Assets\Scrips\EnemySpawner.cs" />
     <Compile Include="Assets\Scrips\Key.cs" />

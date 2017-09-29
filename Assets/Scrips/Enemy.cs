@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
         if (collision.tag == "playerJump")
         {
             Destroy(this.gameObject);
-            enemySpawner.enemiesKilled++;
+            enemySpawner.enemyKilled = true;
         }
    
         player.pushBackCount = player.pushBackLength;
