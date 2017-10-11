@@ -52,22 +52,25 @@ public class Player : MonoBehaviour {
             }
             pushBackCount -= Time.deltaTime;
         }
-        
+
         //jumping
-        if(grounded == true)
+        if (Input.GetButtonDown("Jump"))
         {
-            doubleJump = false;
-        }
-
-        if (grounded == true && Input.GetButtonDown("Jump"))
-        {
-            rb.AddForce(Vector2.up * jumpPower);
-        }
-
-        if (Input.GetButtonDown("Jump") && !doubleJump && !grounded)
-        {
-            rb.AddForce(Vector2.up * doubleJumpPower);
-            doubleJump = true;
+            if (grounded)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+                rb.AddForce(new Vector2(0, jumpPower));
+                doubleJump = true;
+            }
+            else
+            {
+                if (doubleJump)
+                {
+                    doubleJump = false;
+                    rb.velocity = new Vector2(rb.velocity.x, 0);
+                    rb.AddForce(new Vector2(0, jumpPower));
+                }
+            }
         }
     }
 

@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public bool hitLedge;
 
     public bool facingRight = false;
-    private float movementX;
+
 
     void Start()
     {
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "water")
+       if (collision.gameObject.tag == "water")
         {
             Flip();
         }
@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "ledge")
         {
             Flip();
-        }
+        } 
 
         if (collision.gameObject.tag == "ledge2")
         {
@@ -66,11 +66,10 @@ public class Enemy : MonoBehaviour
         if (collision.tag == "playerJump")
         {
             Destroy(this.gameObject);
-            enemySpawner.enemyKilled = true;
+            EnemySpawner.enemyKilled = true;
         }
    
         player.pushBackCount = player.pushBackLength;
-        playerHealth.health--;
 
         if (collision.transform.position.x < transform.position.x)
         {

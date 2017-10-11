@@ -151,10 +151,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             health--;
         }
-      /*  if (collision.gameObject.tag == "enemy1")
-        {
-            health--;
-        } */
+
         if (collision.gameObject.tag == "heart")
         {
             health += 2;
@@ -164,7 +161,10 @@ public class PlayerHealth : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collision2D collision)
     {
-
+        if (collision.gameObject.tag == "enemy1")
+        {
+            health--;
+        }
     }
 
     void OnGUI()

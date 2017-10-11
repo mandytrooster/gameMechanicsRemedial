@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Lock : MonoBehaviour {
 
     private Key keys;
-    private bool pickedUp;
 
     void Start () {
         keys = gameObject.GetComponent<Key>();
