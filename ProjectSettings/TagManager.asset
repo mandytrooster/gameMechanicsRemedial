@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - player
+  - key
+  - lock
+  - water
+  - enemy1
+  - ground
+  - wall
+  - ledge
+  - heart
+  - ledge2
+  - enemyJump
+  - playerJump
+  - ledges
+  - spring
+  - spikes
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - ground
+  - wall
+  - ledge
+  - enemies
+  - player
+  - pickups
+  - water
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: water
+    uniqueID: 4253282383
+    locked: 0
